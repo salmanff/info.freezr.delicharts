@@ -113,7 +113,7 @@ var setNextPeriod = function () {
 }
 var getMorePeriodData = function(){
     //
-    freezr.db.query(recordLogs, 'my_logs', {'requestee_app':'info.freezr.vulog' ,'query_params':{ 'vulog_timestamp':{'$lt':delicharts.lastRecordT}  } })
+    freezr.db.query({'permission_name':'my_logs', 'requestee_app':'info.freezr.vulog' ,'query_params':{ 'vulog_timestamp':{'$lt':delicharts.lastRecordT}  } }, recordLogs)
 }
 var recordLogs = function(resp) {
     resp = freezr.utils.parse(resp);
